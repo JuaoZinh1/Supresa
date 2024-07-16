@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminar Comigo?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative;
+        }
+        .button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .button.yes {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+            left: calc(50% - 120px); /* Move o botão mais para a esquerda */
+            top: 0; /* posição inicial superior */
+        }
+        .button.no {
+            background-color: #28a745;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Você quer terminar ?</h1>
+        <div class="buttons">
+            <button class="button yes" id="yesButton">Sim</button>
+            <button class="button no" id="noButton">Não</button>
+        </div>
+        <p id="response" class="hidden">Clara, sei que está cansada e sinceramente eu quero mudar a forma em que você está se sentindo, eu estou mudando e vou continuar mudando. Novamente, eu não quero que ache que são palavras vazias. Não são palavras vazias, repensei muitas coisas e quero demonstrar agindo da melhor forma com você, não quero te perder e acredito que podemos resolver isso, sei que a situação está toda para o meu lado e estou ciente disso. Estou dando minha palavra, meu posicionamento como homem para você, sei que me comportei mal algumas vezes e não quero que se repita novamente, sei que você está cansada mas não quero que se sinta assim, não quero fazer com que você desista do nosso relacionamento. Reconheço os meus defeitos, sei que posso parecer grosso algumas vezes, sei que posso falhar sendo comunicativo com você, mas não são minhas intenções nunca que eu quero te tratar mal. Quero que você se sinta bem em relação a tudo e quero mudar a forma que você está se sentindo em relação ao nosso relacionamento. Novamente, não são palavras vazias, estou dando minha palavra como homem para você e estarei cumprindo ela. Sei que é necessário e tem que ser mudado, sempre estou procurando e sempre quero ser a melhor pessoa para você, quero que se sinta bem, acolhida e que possa contar comigo para tudo. 
+
+            Sei que está difícil, mas como você me disse uma vez "Depois de toda tempestade vem o arco-íris" e espero que esse momento difícil passe entre nós e que eu e você fique como tudo era antes.
+            Fiz um vídeo com nossas fotos tocando. Não sou de escrever textos, você sabe disso mas é necessário, não quero prolongar o texto mas quero também pedir desculpas por qualquer comportamento ou ação que tenha te machucado ou que você não tenha gostado. Não é minha intenção e não quero te causar isso.</p>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const response = document.getElementById('response');
+
+        yesButton.addEventListener('mouseover', () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - yesButton.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - yesButton.clientHeight));
+            yesButton.style.left = x + 'px';
+            yesButton.style.top = y + 'px';
+        });
+
+        yesButton.addEventListener('click', () => {
+            response.classList.add('hidden');
+        });
+
+        noButton.addEventListener('click', () => {
+            response.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
